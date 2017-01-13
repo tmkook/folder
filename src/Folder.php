@@ -59,13 +59,22 @@ class Folder
 	*
 	* @return string
 	*/
-	public function getFolderName(){
+	public function getName(){
 		$dir = dirname($this->directory);
         $name = trim(str_replace($dir,'',$this->directory),'/');
         if(empty($name)){
             return '.';
         }
         return $name;
+	}
+	
+	/**
+	* 获取当前的文件夹的绝对路径
+	*
+	* @return string
+	*/
+	public function getDirectory(){
+        return $this->directory;
 	}
 	
 	/**
@@ -208,6 +217,46 @@ class Folder
 
         return @rename($oldname, $newname);
     }
+	
+	/**
+	* 在当前文件夹下添加文件
+	*
+	* @param $name string 添加的文件名
+	* @param $body string 添加的文件数据
+	* @return boolen
+	*/
+    public function addFile($name, $body){
+        $name = trim($name, '/');
+        $name = $this->directory . $name;
+
+        return (bool) file_put_contents($name, $body);
+    }
+	
+	/**
+	* 删除当前文件夹的文件
+	*
+	* @param $name string 要删除的文件名
+	* @return boolen
+	*/
+    public function delFile($name){
+        $name = trim($name, '/');
+        $name = $this->directory . $name;
+        if ( ! file_exists($name)) {
+            return true;
+        }
+
+        return unlink($name);
+    }
+	
+	public function moveFile($file,$to){
+		
+	}
+	
+	public function move($folder,$to){
+		
+	}
+	
+	
 }
 
 //异常类
