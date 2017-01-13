@@ -1,0 +1,26 @@
+{
+    "name": "tmkook/folder",
+    "description": "folder handle",
+    "keywords": ["file","folder"],
+    "homepage": "http://github.com/tmkook/folder",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Leon",
+            "email": "tmkook@gmail.com",
+            "homepage": "http://dooim.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+    },
+	"autoload" : {
+		"classmap" : []
+	},
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
+    }
+}
