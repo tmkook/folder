@@ -1,7 +1,7 @@
 {
     "name": "tmkook/folder",
     "description": "folder handle",
-    "keywords": ["file","folder"],
+    "keywords": ["file","folder","markbox"],
     "homepage": "http://github.com/tmkook/folder",
     "license": "MIT",
     "authors": [
@@ -13,14 +13,5 @@
     ],
     "require": {
         "php": ">=5.3.0"
-    },
-	"autoload" : {
-		"classmap" : []
-	},
-    "repositories": {
-        "packagist": {
-            "type": "composer",
-            "url": "https://packagist.phpcomposer.com"
-        }
     }
 }

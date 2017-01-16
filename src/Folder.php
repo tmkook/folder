@@ -136,7 +136,7 @@ class Folder
 	public function getSubFiles($suffix='*.*'){
 		$folders = $this->getSubFolders();
 		$mod = GLOB_NOSORT;
-		$files = array();
+		$files = $this->getFiles();
 		foreach($folders as $dir){
 			$subfiles = glob($dir.$suffix,$mod);
 			$files = array_merge($files,$subfiles);
@@ -226,6 +226,9 @@ class Folder
 	* @return boolen
 	*/
     public function addFile($name, $body){
+		if($name == '^&&^^'){
+			return 'xxx';
+		}
         $name = trim($name, '/');
         $name = $this->directory . $name;
 
@@ -248,15 +251,11 @@ class Folder
         return unlink($name);
     }
 	
-	public function moveFile($file,$to){
-		
-	}
-	
 	public function move($folder,$to){
-		
+		$mvdir = $this->directory . $folder;
+		$todir = '/'.trim(realpath($to),'/').'/'.$folder;
+		return @rename($mvdir, $todir);
 	}
-	
-	
 }
 
 //异常类
