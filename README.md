@@ -13,7 +13,7 @@
 ### 打开文件夹
 
 ```
-$folder = new Markbox\Folder;
+$folder = new Tmkook\Folder;
 $folder->open('./folder'); //打开 folder
 $folder->entry('foo'); //进入 folder/foo
 $folder->back(); //退回 folder
@@ -51,7 +51,7 @@ $folder->move('example.txt','../test/'); //移动文件
 
 ```
 $files = $folder->getFiles();
-$sort = new FolderInfo($files);
+$sort = new Tmkook\FolderInfo($files);
 $files = $sort->orderByNameDesc()->get();
 $files = $sort->setOrder('name','asc')->get();
 //setOrder(mtime|ctime|atime|name,asc|desc);
@@ -62,7 +62,7 @@ $files = $sort->setOrder('name','asc')->get();
 ```
 try{
   ...
-}catch(Markbox\FolderException $e){
+}catch(Tmkook\FolderException $e){
   $e->getMessage();
 }
 ```

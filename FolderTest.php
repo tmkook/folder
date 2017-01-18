@@ -7,7 +7,7 @@ require 'src/FolderInfo.php';
 class FolderTest extends PHPUnit\Framework\TestCase
 {
 	public function testCreate(){
-		$a = new Markbox\Folder;
+		$a = new Tmkook\Folder;
 		$a->open(dirname(__FILE__));
 		$create = $a->create('test');
 		$this->assertDirectoryExists($a->getDirectory().'test');
@@ -24,7 +24,7 @@ class FolderTest extends PHPUnit\Framework\TestCase
 	}
 	
 	public function testGet(){
-		$a = new Markbox\Folder;
+		$a = new Tmkook\Folder;
 		$a->open(dirname(__FILE__));
 		$a->entry('test');
 		
@@ -48,7 +48,7 @@ class FolderTest extends PHPUnit\Framework\TestCase
 	}
 	
 	public function testMove(){
-		$a = new Markbox\Folder;
+		$a = new Tmkook\Folder;
 		$a->open(dirname(__FILE__));
 		$a->entry('test');
 		
@@ -66,12 +66,12 @@ class FolderTest extends PHPUnit\Framework\TestCase
 	}
 	
 	public function testFolderInfo(){
-		$a = new Markbox\Folder;
+		$a = new Tmkook\Folder;
 		$a->open(dirname(__FILE__));
 		$a->entry('test/subtest');
 		$files = $a->getFiles();
 		
-		$sort = new Markbox\FolderInfo($files);
+		$sort = new Tmkook\FolderInfo($files);
 		$list = $sort->get();
 		$this->assertCount(2,$list);
 		
@@ -83,7 +83,7 @@ class FolderTest extends PHPUnit\Framework\TestCase
 	}
 	
 	public function testRemove(){
-		$a = new Markbox\Folder;
+		$a = new Tmkook\Folder;
 		$a->open(dirname(__FILE__));
 		$a->entry('test/subtest');
 		$a->delFile('example.txt');

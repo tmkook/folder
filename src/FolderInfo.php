@@ -1,8 +1,8 @@
-<?php namespace Markbox;
+<?php namespace Tmkook;
 /**
 * 类 FileInfo 提供了目录文件的排序功能。
 *
-* @link http://github.com/tmkook/markbox
+* @link http://github.com/tmkook/folder
 *
 * @copyright (c) 2016 tmkook.
 * @license MIT

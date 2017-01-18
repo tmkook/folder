@@ -1,8 +1,8 @@
-<?php namespace Markbox;
+<?php namespace Tmkook;
 /**
 * 类 Folder 提供了目录文件的基本操作。
 *
-* @link http://github.com/tmkook/markbox
+* @link http://github.com/tmkook/folder
 *
 * @copyright (c) 2016 tmkook.
 * @license MIT
